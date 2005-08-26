@@ -18,6 +18,17 @@ InfinityTestCase >> testNegativeIsInfinite [
 ]
 
 { #category : #testing }
+InfinityTestCase >> testNegativePrintOn [
+
+	|stream|
+	stream := String new writeStream.
+	Infinity negative printOn: stream.
+	self assert: stream contents = 'Infinity negative'
+
+	
+]
+
+{ #category : #testing }
 InfinityTestCase >> testPositiveAccessing [
 
 	self assert: Infinity positive class = Infinity
@@ -28,4 +39,15 @@ InfinityTestCase >> testPositiveAccessing [
 InfinityTestCase >> testPositiveIsInfinite [
 
 	self assert: Infinity positive isInfinite	
+]
+
+{ #category : #testing }
+InfinityTestCase >> testPositivePrintOn [
+
+	|stream|
+	stream := String new writeStream.
+	Infinity positive printOn: stream.
+	self assert: stream contents = 'Infinity positive'
+
+	
 ]
