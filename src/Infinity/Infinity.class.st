@@ -43,13 +43,13 @@ Infinity class >> positive [
 
 { #category : #arithmetic }
 Infinity >> * anObject [
-
+	anObject isInfinite ifTrue: [self halt].
 	^anObject * self
 ]
 
 { #category : #arithmetic }
 Infinity >> + anObject [
-
+	anObject isInfinite ifTrue: [self halt.].
 	^anObject + self
 ]
 
