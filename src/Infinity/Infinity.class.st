@@ -2,11 +2,13 @@ Class {
 	#name : #Infinity,
 	#superclass : #Object,
 	#instVars : [
-		'isNegative'
+		'floatRepresentation'
 	],
 	#classVars : [
+		'PositiveRepresentation',
 		'PositiveInfinity',
-		'NegativeInfinity'
+		'NegativeInfinity',
+		'NegativeRepresentation'
 	],
 	#category : #Infinity
 }
@@ -15,6 +17,9 @@ Class {
 Infinity class >> initialize [
 	"initializes the receiver"
 
+	PositiveRepresentation := Float maxVal * Float maxVal.
+	NegativeRepresentation := (1 - PositiveRepresentation).
+	
 	PositiveInfinity := self new 
 						isNegative: false;
 						yourself.
@@ -36,6 +41,29 @@ Infinity class >> positive [
 	^PositiveInfinity
 ]
 
+{ #category : #arithmetic }
+Infinity >> * anObject [
+
+	^anObject * self
+]
+
+{ #category : #arithmetic }
+Infinity >> + anObject [
+
+	^anObject + self
+]
+
+{ #category : #adapting }
+Infinity >> adaptToNumber: rcvr andSend: selector [
+	|result|	
+	result := rcvr perform: selector with: floatRepresentation.
+	result = PositiveRepresentation ifTrue: [^self class positive].	
+	result = NegativeRepresentation ifTrue: [^self class negative].
+	^result
+
+
+]
+
 { #category : #testing }
 Infinity >> isInfinite [
 	"Returns true if the receiver represents an infinite value"
@@ -47,21 +75,23 @@ Infinity >> isInfinite [
 Infinity >> isNegative [
 	"Returns true if the receiver is negative"
 
-	^isNegative
+	^floatRepresentation < 0
 ]
 
 { #category : #accessing }
 Infinity >> isNegative: aBoolean [
 	"Sets the receiver to be positive or negative depending on the given boolean"
 
-	isNegative := aBoolean
+	aBoolean 
+		ifTrue: [floatRepresentation := NegativeRepresentation]
+		ifFalse: [floatRepresentation := PositiveRepresentation]
 ]
 
 { #category : #testing }
 Infinity >> isPositive [
 	"Returns true if the receiver is positive"
 
-	^self isNegative not
+	^floatRepresentation > 0
 ]
 
 { #category : #printing }
