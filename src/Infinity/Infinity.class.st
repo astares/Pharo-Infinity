@@ -5,12 +5,12 @@ Class {
 		'floatRepresentation'
 	],
 	#classVars : [
-		'PositiveRepresentation',
-		'PositiveInfinity',
 		'NegativeInfinity',
-		'NegativeRepresentation'
+		'NegativeRepresentation',
+		'PositiveInfinity',
+		'PositiveRepresentation'
 	],
-	#category : #Infinity
+	#category : #'Infinity-Core'
 }
 
 { #category : #'class initialization' }
@@ -49,7 +49,7 @@ Infinity >> * anObject [
 
 { #category : #arithmetic }
 Infinity >> + anObject [
-	anObject isInfinite ifTrue: [self halt.].
+	anObject isInfinite ifTrue: [self halt].
 	^anObject + self
 ]
 

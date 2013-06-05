@@ -1,6 +1,6 @@
 Extension { #name : #Float }
 
-{ #category : #'*Infinity' }
+{ #category : #'*Infinity-Core' }
 Float class >> maxVal [
 	"return the maximum value for floats"
 
