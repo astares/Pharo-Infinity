@@ -6,8 +6,8 @@ Infinity arithmetic for Smalltalk
 
 ```Smalltalk
 Metacello new 
-    repository: 'github://pharo-contributions/Scheduler/src';
-    baseline: 'Scheduler';
+    repository: 'github://astares/Pharo-Infinity/src';
+    baseline: 'Infinity';
     load
 ```
 
