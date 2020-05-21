@@ -1,5 +1,5 @@
 # Pharo-Infinity
-Infinity arithmetic for Smalltalk
+Infinity arithmetic for Pharo Smalltalk
 
 ## Quick Start
 ### Installation
