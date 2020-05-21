@@ -1,3 +1,6 @@
+"
+Represents infinity
+"
 Class {
 	#name : #Infinity,
 	#superclass : #Object,
