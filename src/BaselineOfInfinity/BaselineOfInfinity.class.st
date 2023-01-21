@@ -1,5 +1,7 @@
 "
 Baseline for https://github.com/astares/Pharo-Infinity
+
+See [https://github.com/astares/Pharo-Infinity](https://github.com/astares/Pharo-Infinity)
 "
 Class {
 	#name : #BaselineOfInfinity,
