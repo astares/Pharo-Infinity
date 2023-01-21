@@ -16,7 +16,7 @@ Infinity arithmetic for Pharo
 
 ```Smalltalk
 Metacello new 
-    repository: 'github://astares/Pharo-Infinity/src';
+    repository: 'github://astares/Pharo-Infinity:main/src';
     baseline: 'Infinity';
     load
 ```
