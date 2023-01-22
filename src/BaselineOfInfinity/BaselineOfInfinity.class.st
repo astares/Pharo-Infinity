@@ -23,6 +23,7 @@ BaselineOfInfinity >> baseline: spec [
 			spec	
 				group: 'Core' with: #('Infinity-Core');
 				group: 'Tests' with: #('Infinity-Core-Tests');
+				group: 'CI' with: #('Tests');
 				group: 'all' with: #('Core' 'Tests');
 				group: 'default' with: #('Core' 'Tests') ]
 ]
