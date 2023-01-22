@@ -22,14 +22,14 @@ Infinity class >> initialize [
 
 	PositiveRepresentation := Float maxVal * Float maxVal.
 	NegativeRepresentation := (1 - PositiveRepresentation).
-	
-	PositiveInfinity := self new 
+
+	PositiveInfinity := self new
 						isNegative: false;
 						yourself.
 
-	NegativeInfinity := self new 
+	NegativeInfinity := self new
 						isNegative: true;
-						yourself 
+						yourself
 ]
 
 { #category : #accessing }
@@ -58,19 +58,17 @@ Infinity >> + anObject [
 
 { #category : #adapting }
 Infinity >> adaptToNumber: rcvr andSend: selector [
-	|result|	
+	|result|
 	result := rcvr perform: selector with: floatRepresentation.
-	result = PositiveRepresentation ifTrue: [^self class positive].	
+	result = PositiveRepresentation ifTrue: [^self class positive].
 	result = NegativeRepresentation ifTrue: [^self class negative].
 	^result
-
-
 ]
 
 { #category : #testing }
 Infinity >> isInfinite [
 	"Returns true if the receiver represents an infinite value"
-	
+
 	^true
 ]
 
@@ -85,9 +83,9 @@ Infinity >> isNegative [
 Infinity >> isNegative: aBoolean [
 	"Sets the receiver to be positive or negative depending on the given boolean"
 
-	aBoolean 
-		ifTrue: [floatRepresentation := NegativeRepresentation]
-		ifFalse: [floatRepresentation := PositiveRepresentation]
+	floatRepresentation := aBoolean
+		                       ifTrue: [ NegativeRepresentation ]
+		                       ifFalse: [ PositiveRepresentation ]
 ]
 
 { #category : #testing }
@@ -101,10 +99,10 @@ Infinity >> isPositive [
 Infinity >> printOn: aStream [
 	"Prints the receiver on the given stream"
 
-	aStream 
+	aStream
 		nextPutAll: self class name;
 		space.
-	self isNegative 
+	self isNegative
 			ifTrue: [aStream nextPutAll: 'negative']
 			ifFalse: [aStream nextPutAll: 'positive']
 ]

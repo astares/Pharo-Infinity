@@ -9,18 +9,18 @@ Class {
 	#category : #BaselineOfInfinity
 }
 
-{ #category : #baseline }
+{ #category : #baselines }
 BaselineOfInfinity >> baseline: spec [
 	<baseline>
 	spec
 		for: #common do: [
 			"Packages"
-			spec 
+			spec
 				package: 'Infinity-Core';
 				package: 'Infinity-Core-Tests' with: [ spec requires: #('Infinity-Core') ].
-			
-			"Groups"	
-			spec	
+
+			"Groups"
+			spec
 				group: 'Core' with: #('Infinity-Core');
 				group: 'Tests' with: #('Infinity-Core-Tests');
 				group: 'CI' with: #('Tests');

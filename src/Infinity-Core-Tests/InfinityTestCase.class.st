@@ -8,7 +8,6 @@ Class {
 InfinityTestCase >> testNegativeAccessing [
 
 	self assert: Infinity negative class equals: Infinity
-
 ]
 
 { #category : #'testing negative arithmetic' }
@@ -26,7 +25,7 @@ InfinityTestCase >> testNegativeAddAsReceiver [
 { #category : #'testing negative' }
 InfinityTestCase >> testNegativeIsInfinite [
 
-	self assert: Infinity negative isInfinite	
+	self assert: Infinity negative isInfinite
 ]
 
 { #category : #'testing negative arithmetic' }
@@ -48,15 +47,12 @@ InfinityTestCase >> testNegativePrintOn [
 	stream := String new writeStream.
 	Infinity negative printOn: stream.
 	self assert: stream contents equals: 'Infinity negative'
-
-	
 ]
 
 { #category : #'testing positive' }
 InfinityTestCase >> testPositiveAccessing [
 
 	self assert: Infinity positive class equals: Infinity
-
 ]
 
 { #category : #'testing positive arithmetic' }
@@ -74,7 +70,7 @@ InfinityTestCase >> testPositiveAddAsReceiver [
 { #category : #'testing positive' }
 InfinityTestCase >> testPositiveIsInfinite [
 
-	self assert: Infinity positive isInfinite	
+	self assert: Infinity positive isInfinite
 ]
 
 { #category : #'testing positive arithmetic' }
@@ -96,6 +92,4 @@ InfinityTestCase >> testPositivePrintOn [
 	stream := String new writeStream.
 	Infinity positive printOn: stream.
 	self assert: stream contents equals: 'Infinity positive'
-
-	
 ]
